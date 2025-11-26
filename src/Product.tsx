@@ -2,9 +2,16 @@ import  { useEffect, useState } from 'react'
 import axios from 'axios';
 import Header from './Header';
 
+interface MyData{
+caption:string,
+photo_url:string,
+id:string
+}
+
+
 export default function Product() {
 
-    const[data,setData]=useState([]);
+    const[data,setData]=useState<MyData[]>([]);
 
     useEffect(()=>{
 

@@ -2,8 +2,14 @@ import { useEffect, useState } from 'react'
 import axios from 'axios';
 import Header from './Header';
 
+interface MyData{
+caption:string,
+created_at:string
+photo_url:string
+}
+
 export default function Others() {
-    const [data,setData]=useState([]);
+    const [data,setData]=useState<MyData[]>([]);
 
     useEffect(()=>{ 
         axios.get("https://jsonfakery.com/photos/paginated")
